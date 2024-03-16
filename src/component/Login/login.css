@@ -1,0 +1,48 @@
+
+#parents{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: brown;
+}
+#child{
+    color: brown;
+    border: 0.1rem solid;
+    border-color: black;
+    padding: 3.5rem;
+    height: 40%;
+    margin:15vh;
+}
+#login{
+    display: flex;
+    border: 2px solid;
+    margin: 0.5rem;
+    height: 2.25rem;
+    width: 80%;
+    border-color: wheat;
+}
+#login i{
+    margin: auto 5%;
+}
+#login input{
+    text-align: center;
+    border: none;
+    width:87%;
+}
+#Lbtn{
+    width: 80%;
+}
+#slink{
+    text-decoration: none;
+    color: brown;
+}
+p{
+    color: black;
+}
+
+@media screen and (max-width:720px) {
+
+    #login{
+        width: 14rem;
+    }
+}

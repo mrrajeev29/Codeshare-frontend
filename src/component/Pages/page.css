@@ -1,0 +1,302 @@
+#i3{
+    display: flex;
+    margin: ;
+}
+#i1,#i4,#i5,#i6{
+    display: flex;
+    height: 5rem;
+    width: 100%;
+    background-color:burlywood;
+    justify-content: space-between;
+    position:fixed;
+}
+
+#LO{
+    text-decoration: none;
+    color: black;
+}
+
+#Pparents{
+    height: 100vh;
+}
+
+
+#parent{
+    display: flex;
+}
+
+
+#Pchild1{
+    width: 80%;
+    background-color:white;
+    margin-top: 5rem;
+    display: grid;
+    place-items: center;
+
+}
+
+#Pchild2{
+    width: 20%;
+    height: 90vh;
+    background-color: #87cefa;
+    margin-top: 5rem;
+    position:fixed;
+    right: 0;
+    top:0 ;
+    place-items: center;
+}
+
+#Pchild3{
+    margin-top: 4rem;
+    background-color: #87cefa;
+    width:;
+
+}
+
+
+#sBar{
+    border: none;
+    background-color: white;
+    display: flex;
+    border-radius: 1rem;
+    height: 2.5rem;
+    width:14rem;
+    margin-left: 1.5rem;
+    color: burlywood;
+}
+
+#sIcon{
+    color: #87cefa;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.75rem;
+    cursor: pointer;
+    color: burlywood;
+
+}
+
+#sInp{
+    border-radius: 1rem;
+    border: none;
+    color: burlywood;
+
+    text-align: center;
+}
+
+#Pbtn{
+    height: 2.5rem;
+    margin: 1.75rem;
+    width: 14rem;
+    margin-top: 3.5rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: white;
+    color:burlywood;
+    cursor: pointer;
+}
+
+#rChild{
+    margin:3rem 1rem;
+    
+}
+
+
+#Pbtn:hover{
+    background-color: burlywood;
+    color: white;
+}
+
+#sIcon:hover{
+    color:#87cefa;
+}
+
+#mobNav{
+    display: none;
+    margin-top: 1.5rem;
+    width: 45px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#i4{
+    margin-top: 5rem;
+    display: none;
+    justify-content: space-evenly;
+    background-color: palegreen;
+}
+#i5{
+    margin-top: 10rem;
+    display: none;
+    justify-content: space-evenly;
+    background-color:#87cefa;
+    height: 4rem;
+}
+#i4 i{
+    margin: 1rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+
+#navWork{
+    margin-top: 10rem;
+}
+
+#pBar{
+    margin-top: 0.5rem;
+    font-size: 2rem;
+}
+#pBar i{
+    margin:auto 1.8rem;
+}
+
+
+
+#ansDiv{
+    border: 1px black solid;
+    width: 95%;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    margin: 1rem;
+}
+#ansDiv:hover{
+    box-shadow: 20px 20px 60px #87cefa,inset -20px -20px 60px rgba(255,255,255,0.246);
+}
+
+#ansDiv h1{
+    margin: 0.5rem 1rem;
+    font-family:'Roboto, sans-serif';
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+#ansDiv h4{
+    font-size: 1.2rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#ansDiv button{
+    width: 10rem;
+    height: 2.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: burlywood;
+    color: white;
+    border-radius: 6px;
+}
+#ansDiv button:hover{
+    background-color:#87cefa;
+}
+#posted{
+    margin-left: 50rem;
+}
+@media screen and (max-width :1350px) {
+    #Pchild2{
+        width: 25%;
+    }
+    #ansDiv{
+        width: 80%;   
+    }
+    #posted{
+        margin-left: 35rem;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    #Pchild2{
+        width: 30%;
+    }
+    #ansDiv{
+        width:70%;   
+    }
+    #posted{
+        margin-left: 25rem;
+    }
+}
+
+@media screen and (max-width:900px)  {
+    #Pchild2{
+        display: none;
+    }
+    #mobNav{
+        display: flex;
+    }
+    #i3{
+        display: none;
+    }
+    #i4{
+        display: none;
+    } 
+    #ansDiv{
+        width: 100%;   
+        margin-left:30%;
+    }
+    #ansDiv h1{
+        font-family:'Roboto, sans-serif';
+        font-size: 1.35rem;
+    }
+}
+
+
+.container {
+	text-align: center;
+	margin: auto;
+	max-width: 30rem;
+}
+
+.geeks {
+	color: red;
+}
+
+.text {
+	display: inline;
+	width: 90%;
+}
+
+.read-or-hide {
+	color: rgb(192, 192, 192);
+	cursor: pointer;
+}
+
+@media screen and (max-height:480px){
+    #ansDiv{
+        width: 100%;   
+        margin-left:32%;
+    }
+
+}
+@media screen and ((min-height:540px) and (max-height:680px)) {
+    #Pbtn{
+        margin: 1.75rem;
+    }
+
+}
+
+@media screen and ((min-height:480px) and (max-height:540px)) {
+    #Pbtn{
+        margin: 1.25rem;
+        margin-left: ;
+
+    }
+    #sBar{
+        margin-left: 1.2rem;
+    }
+
+}
+@media screen and (max-height:480px) {
+#mobNav{
+    display: flex;
+}
+
+#Pchild2{
+    display: none;
+}
+#i3{
+    display: none;
+}
+}
+@media screen and (max-height:1300px) {
+    #Pchild2{
+        height: 100vh;
+    }
+}

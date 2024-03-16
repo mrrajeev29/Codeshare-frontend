@@ -1,0 +1,72 @@
+#PchildAdd{
+    margin-top: 5rem;
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+#PchildAdd h1{
+    margin-left: -10rem;
+
+}
+#Qdiv,#Adiv{
+    border: 0px #000000 solid;
+    width: 55%;
+    margin-left: -10rem;
+    height: 20rem;
+}
+#Adiv{
+    margin-bottom: 15rem;
+}
+#Qdiv textarea,#Adiv textarea{
+    width: 90%;
+    height: 80%;
+}
+
+#Adiv select{
+    width: 30%;
+    height: 10%;
+    text-align: center;
+}
+
+#Adiv button{
+    width: 30%;
+    height: 12%;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    color: white;
+    border-radius: 0.25rem;
+    background-color:burlywood;
+}
+
+#Adiv button:hover{
+    background-color:#87cefa ;
+
+}
+
+@media screen and (max-width:900px) {
+    #Qdiv,#Adiv{
+        margin-left: 0rem;
+        width: 85%;
+    }
+    #PchildAdd h1{
+        margin-left: 0rem;
+    }
+    #PchildAdd{
+        margin-left: 3rem;
+    }
+} 
+
+@media screen and (max-width:620px) {
+    #Adiv button,
+    #Adiv select{
+        width: 40%;
+    }
+} 
+@media screen and (max-width:480px) {
+    #Adiv button,
+    #Adiv select{
+        width: 50%;
+    }
+} 

@@ -1,0 +1,64 @@
+#ProfChild{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+#ProfChild h1{
+    margin-left: -10rem;
+
+}
+#ProfSubChild{
+    border: 1px #000000 solid;
+    width: 55%;
+    margin-left: -10rem;
+    display: grid;
+    place-items: center;
+    height: 30rem;
+
+}
+
+
+
+#eyebtn1,#close-eyebtn1,#eyebtn2,#close-eyebtn2{
+    cursor: pointer;
+}
+#CP{
+    margin-top:-3rem;
+}
+#CP h1{
+    text-align: center;
+    margin-left: 0rem;
+}
+#btnDiv{
+    display: grid;
+    place-items: center;
+}
+
+#Ubtn{
+    width: 9.5rem;
+    height: 2.25rem;
+    background-color: burlywood;
+    border: none;
+    color: whitesmoke;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+#Ubtn:hover{
+    background-color: #87cefa;
+}
+
+#i4 div i{
+    color: black;
+}
+@media screen and (max-width:900px) {
+    #ProfSubChild{
+        margin-left: 0rem;
+        width: 85%;
+    }
+    #ProfChild h1{
+        margin-left: 0rem;
+    }
+}
+

@@ -1,0 +1,75 @@
+#ShowParent{
+    margin-top: 6rem;
+    width: 100%;
+    margin-left: 6rem;
+}
+#ShowParent1{
+    width:65%;
+    height: fit-content;
+    border: 1px black solid;
+    margin-left: 6rem;
+    height: fit-content;
+
+}
+#Qshow,#Ashow{
+    display: grid;
+    padding: 1rem;
+}
+#Ashow h1,#Qshow h1{
+    display: grid;
+    place-items: center;
+}
+#Cshow{
+    width:65%;
+    height: fit-content;
+    margin-left: 6rem;
+    height: fit-content;
+}
+#CmntDiv
+{
+    border: 0.5px black solid;
+    width: fit-content;
+    margin-top: 1px;
+}
+#CmntBox textarea{
+    width: 40%;
+    height: 5rem;
+
+}
+#CmntBox button,#Qbtn button{
+    width: 10rem;
+    height: 2.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: burlywood;
+    color: white;
+    border-radius: 6px;
+}
+#CmntBox button:hover,#Qbtn button:hover{
+    background-color:#87cefa;
+
+}
+@media screen and ((min-width:1100px) and (max-width:1350px)){
+    #ShowParent1,#Cshow{
+
+        margin-left: 2.5rem;
+    }
+}
+@media screen and ((min-width:900px) and (max-width:1100px)){
+    #ShowParent1,#Cshow{
+
+        margin-left: 0.45rem;
+    }
+}
+@media screen and ( max-width:900px){
+    #ShowParent1,#Cshow{
+        width: 115%;
+        margin-left:-4.5rem;
+    }
+}
+@media screen and (max-height:480px) {
+    #ShowParent1,#Cshow{
+        width: 100%;
+        margin-left:-3.5rem;
+    }
+}
