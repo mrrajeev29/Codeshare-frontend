@@ -27,10 +27,7 @@ window.onresize=function()
 
         document.getElementById("Pchild1").style.marginTop="5rem";
     }
-    if(window.innerHeight<=500)
-    {
-        document.getElementById("i5").style.display="flex";
-    }
+
 }
 
 const ReadMore = ({ children }) => {
