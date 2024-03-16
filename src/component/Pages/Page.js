@@ -217,7 +217,6 @@ function showIcon()
     document.getElementById("mNav2").style.display="flex";
     document.getElementById("i4").style.display="flex";
     document.getElementById("Pchild1").style.marginTop="10rem";
-	    document.getElementById("i5").style.display="flex";
 
 }
 
