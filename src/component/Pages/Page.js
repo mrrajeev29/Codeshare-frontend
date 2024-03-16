@@ -23,9 +23,13 @@ window.onresize=function()
        document.getElementById("mNav1").style.display="flex";
         document.getElementById("mNav2").style.display="none";
         document.getElementById("i4").style.display="none";
-        document.getElementById("i5").style.display="flex";
+        document.getElementById("i5").style.display="none";
 
         document.getElementById("Pchild1").style.marginTop="5rem";
+    }
+    if(window.innerHeight<=500)
+    {
+        document.getElementById("i5").style.display="flex";
     }
 }
 
