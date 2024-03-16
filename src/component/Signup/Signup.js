@@ -166,12 +166,12 @@ function otpShow(e) {
             If you didn't sign up for an account with us, you can safely ignore this email.
             
             If you have any questions or need assistance, 
-            feel free to contact our support team at [Your Support Email].
+            feel free to contact our support team at codeshare.code@gmail.com.
             
             Best regards,
             Rajeev Ranjan,
             creator,
-            codeshare</pre>
+            codeshare. </pre>
             </pre>`;
            // alert(email); // Ensure that email variable is defined
             window.Email.send({/*
