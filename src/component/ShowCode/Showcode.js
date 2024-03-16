@@ -115,7 +115,7 @@ const Showcode=()=>{
                     <div id="ShowParent1">
                         <div id="Qshow">
                             <h1>Question</h1>
-                            <p>{code.question}</p>
+                            <pre>{code.question}</pre>
                         </div>
                     </div><br/>
                     <div id="ShowParent1">
