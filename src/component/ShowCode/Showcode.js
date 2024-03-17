@@ -129,7 +129,7 @@ const Showcode=()=>{
                     <div id="ShowParent1">
                         <div id="Ashow">
                             <h1>Caption</h1>
-                            <pre>{code.comment}</pre>
+                            <p>{code.comment}</p>
                         </div>
                     </div><br/>
 
