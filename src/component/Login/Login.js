@@ -28,6 +28,12 @@ const Login=()=>{
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
+        document.getElementById("showload").style.display="flex";
+        document.getElementById("showMsgError").style.display="none";
+        document.getElementById("showError").style.display="none";
+
+
+
         //console.log(inputs);
         try{
             const {data}=await axios.post('https://project-backend-t955.onrender.com/api/v1/user/login',{email:inputs.email,password:inputs.password});
@@ -47,6 +53,7 @@ const Login=()=>{
                 //alert("Invalid User")
                 document.getElementById("showError").style.display="flex";
                 document.getElementById("showMsgError").style.display="none";
+                document.getElementById("showload").style.display="none"
             }
         }catch(error)
         {
@@ -55,6 +62,8 @@ const Login=()=>{
             //{
                 document.getElementById("showMsgError").style.display="flex";
                 document.getElementById("showError").style.display="none";
+                document.getElementById("showload").style.display="none"
+
             //}
         }
     }
@@ -82,6 +91,7 @@ const Login=()=>{
                         <button id="Sbtn">Log in</button>
                         <p style={{display:"none",color:"red"}} id="showError">Entered email is wrong or not registered</p>
                         <p style={{display:"none",color:"red"}} id="showMsgError">Wrong Password.</p>
+                        <p style={{display:"none",color:"red"}} id="showload">Loading...</p>
                         <p>New User?&emsp;&emsp;<Link id="slink" to="/signup">sign up</Link></p>
                     </div>
                 </form>
