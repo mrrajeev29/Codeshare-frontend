@@ -100,7 +100,7 @@ const Code=()=>{
         try{
             const {data}=await axios.delete(`https://project-backend-t955.onrender.com/api/v1/code/delete-code/${id}`);
             if(data?.success){
-                toast("Question Deleted");
+                toast("Question Deleted Successfully.");
                 //navigate()
             }
         }catch(error){
