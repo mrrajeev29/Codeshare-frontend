@@ -2,7 +2,8 @@ import react,{useState,useEffect} from "react";
 import { Link,useNavigate } from "react-router-dom";
 import {useSelector} from 'react-redux';
 import axios from 'axios';
-
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 import "./signup.css"
 
 
@@ -24,17 +25,19 @@ const Signup=()=>{
     }
 
     const handleSubmit=async(e)=>{
+
        // e.preventDefault();
         //console.log(inputs);
+        toast("Trying to sign up...")
         try{
             const {data}=await axios.post('https://project-backend-t955.onrender.com/api/v1/user/register',{username:inputs.name,email:inputs.email,password:inputs.password});
             if(data.success){
-                alert("User Register Successfully");
+                alert("User Register Successfully. You can now login.");
                 navigate("/");
                 localStorage.clear();
             }
             else{
-                alert("email already registered")
+                toast("email already registered")
             }
         }catch(error)
         {
@@ -55,7 +58,7 @@ const Signup=()=>{
             handleSubmit();
         }
         else{
-            alert("Invalid Otp")
+            toast("Invalid Otp. Please enter correct otp.")
         }
 
     }
@@ -77,6 +80,7 @@ const Signup=()=>{
 
         { !isLogin && (
         <div id="parents"> 
+        <ToastContainer/>
             <div id="child">
                 <div>
                     <div id="schild">
@@ -160,7 +164,7 @@ function otpShow(e) {
             To complete the registration process and verify your email address, 
             please use the following one-time password (OTP):
 
-            <h4>OTP: ${otp_code} <h4><pre>
+            <h4>OTP: ${otp_code} <h4>
             
             Please enter this OTP on our website to confirm your email address. 
             If you didn't sign up for an account with us, you can safely ignore this email.
@@ -171,7 +175,7 @@ function otpShow(e) {
             Best regards,
             Rajeev Ranjan,
             creator,
-            codeshare. </pre>
+            codeshare.
             </pre>`;
            // alert(email); // Ensure that email variable is defined
             window.Email.send({/*
@@ -189,7 +193,7 @@ function otpShow(e) {
                 Body : emailbody
             }).then(message => {
                 if (message === 'OK') {
-                    alert("Otp sent to email. Please Check spam section also.");
+                    toast("Otp sent to email. Please Check spam section also.");
                 }
                // alert(message);
             }).catch(error => {
