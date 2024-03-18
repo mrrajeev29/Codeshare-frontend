@@ -49,6 +49,22 @@
     background-color:#87cefa;
 
 }
+#copy{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+#copy button{
+    height: 1.5rem;
+    background-color: burlywood;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#copy button:hover{
+    background-color: #87cefa;
+}
 @media screen and ((min-width:1100px) and (max-width:1350px)){
     #ShowParent1,#Cshow{
 
