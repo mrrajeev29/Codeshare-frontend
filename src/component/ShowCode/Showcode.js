@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import "./showcode.css"
 import axios from 'axios';
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
+
 window.onresize=function()
 {
     document.getElementById("i4").style.width=window.innerWidth+"px";
@@ -33,6 +37,16 @@ const Showcode=()=>{
     const [code,setCode]=useState({});
     const [loading, setLoading] = useState(false);
 
+
+
+
+    const [copySuccess, setCopySuccess] = useState('');
+
+
+
+
+
+
  //   const [inputs,setInputs]=useState({})
 
     const blog_id=useParams().id;
@@ -59,6 +73,16 @@ const Showcode=()=>{
       }, []);
     // alert(code.question)
     //  alert(code?.question)
+    const copyToClipboard = async (text) => {
+        try {
+            await navigator.clipboard.writeText(text);
+            toast("copied to clipboard.")
+            setCopySuccess('Copied!');
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+            setCopySuccess('Failed to copy!');
+        }
+    };
 
 
       
@@ -112,6 +136,7 @@ const Showcode=()=>{
                         <h1>Loading....</h1>
                     ) :(
                 <div id="ShowParent"> 
+                <ToastContainer/>
                     <div id="ShowParent1">
                         <div id="Qshow">
                             <h1>Question</h1>
@@ -120,10 +145,13 @@ const Showcode=()=>{
                     </div><br/>
                     <div id="ShowParent1">
                         <div id="Ashow">
-                            <h1>Code</h1>
+                            <div id="copy">
+                                <h1></h1>
+                                <h1>Code</h1>
+                                <button onClick={()=>copyToClipboard(code.answer)}><i class="fa fa-clipboard"></i>&ensp;Copy</button>
+                            </div>
                             <p>{code.language}</p>
-                            <pre>{code.answer}
-                            </pre>
+                            <pre>{code.answer}</pre>
                         </div>
                     </div><br/>
                     <div id="ShowParent1">
