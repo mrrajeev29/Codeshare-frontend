@@ -89,3 +89,8 @@
         margin-left:-3.5rem;
     }
 }
+@media screen and ( max-width:400px){
+    #copy{ 
+        justify-content:space-around;
+    }
+}
