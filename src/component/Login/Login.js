@@ -4,6 +4,8 @@ import "./login.css"
 import {useDispatch} from 'react-redux'
 import axios from "axios"
 import { authActions } from "../../redux/store";
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 const Login=()=>{
@@ -36,27 +38,28 @@ const Login=()=>{
 
         //console.log(inputs);
         try{
+            toast("Trying to Log in...");
+
             const {data}=await axios.post('https://project-backend-t955.onrender.com/api/v1/user/login',{email:inputs.email,password:inputs.password});
             if(data.success){
+                toast('Login Successful..')
                 localStorage.setItem('userId',data?.user._id);
                 localStorage.setItem('username',data?.user.username);
                 localStorage.setItem('email',data?.user.email);
-
                // alert(localStorage.getItem('email'));
-
                 dispatch(authActions.login());
-               // alert("User Login Successfully");
                 navigate("/page");
             }
             else
             {
-                //alert("Invalid User")
+                toast("Email is wrong or not registered...");
                 document.getElementById("showError").style.display="flex";
                 document.getElementById("showMsgError").style.display="none";
                 document.getElementById("showload").style.display="none"
             }
         }catch(error)
         {
+            toast('Wrong Password...')
             console.log(error);
            // if(document.getElementById("showError").style.display!="flex")
             //{
@@ -71,6 +74,8 @@ const Login=()=>{
     return(
         <>
         <div id="parents"> 
+        <ToastContainer/>
+
             <div id="child">
                 <form onSubmit={handleSubmit}>
                     <div id="schild">
