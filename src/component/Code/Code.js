@@ -1,5 +1,7 @@
 import react ,{useEffect,useState} from "react";
 import { Link,useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 import "./code.css"
 import axios from 'axios'
 window.onresize=function()
@@ -98,7 +100,7 @@ const Code=()=>{
         try{
             const {data}=await axios.delete(`https://project-backend-t955.onrender.com/api/v1/code/delete-code/${id}`);
             if(data?.success){
-                alert("Question Deleted");
+                toast("Question Deleted");
                 //navigate()
             }
         }catch(error){
@@ -131,6 +133,7 @@ const Code=()=>{
 
 
             <div id="parent">
+            <ToastContainer/>
 
                 <div id="i4">
                     <Link to="/page"><div><i class="fa fa-home"></i></div></Link>
