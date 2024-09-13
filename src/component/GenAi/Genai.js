@@ -9,7 +9,7 @@ window.onresize=function()
     document.getElementById("i4").style.width=window.innerWidth+"px";
    // document.getElementById("Pchild2").style.height=window.innerHeight+"px";
 
-    if(window.innerWidth>900)  
+    if(window.innerWidth>900)
     {
         document.getElementById("i4").style.display="none";
         document.getElementById("i5").style.display="none";
@@ -153,7 +153,7 @@ useEffect(() => {
                     </div>
                     <Link to="/profile"><button id="Pbtn"><i class="fa fa-user-o"></i>&emsp;profile</button></Link>
                     <Link to="/yourcode"><button id="Pbtn"><i class="fa fa-code"></i>&emsp;Your Code</button></Link>
-                    <button id="Pbtn" onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}><i class="fa fa-arrow-up"></i>&emsp;Go to Top</button>
+                    <Link to="/page"><button id="Pbtn"><i class="fa fa-home"></i>&emsp;Go to Home</button><br/></Link>
                     <Link to="/addnew"><button id="Pbtn"><i class="fa fa-plus">&emsp;</i>Add new code</button></Link>
                     
                 </div>
