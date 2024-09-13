@@ -11,6 +11,7 @@ import Code from './component/Code/Code';
 import Addnew from './component/Addnew/Addnew';
 import Showcode from './component/ShowCode/Showcode';
 import Updatecode from './component/UpdateCode/Updatecode';
+import Genai from './component/GenAi/Genai';
 import {createBrowserRouter,Navigate,RouterProvider,} from "react-router-dom";
 //import {Provider} from 'react-redux'
 //import { store } from './redux/store';
@@ -50,6 +51,10 @@ const router= createBrowserRouter([
   {
     path:"updatecode/:id",
     element:token?<Updatecode/> : <Navigate replace to="/"/>
+  },
+  {
+    path:"AskCode",
+    element:token?<Genai/> : <Navigate replace to="/"/>
   }
 ]);
 

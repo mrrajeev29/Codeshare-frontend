@@ -148,6 +148,8 @@ const Code=()=>{
 
                 <div id="i4">
                     <Link to="/page"><div><i class="fa fa-home"></i></div></Link>
+                    <div><Link to="/AskCode"><i class="fa fa-weixin"></i></Link></div>
+
                     <div><i id="searchIcon" onClick={()=>{hideNavSearch() }} class="fa fa-search"></i></div>
                     <div><i class="fa fa-user-circle-o" onClick={()=>{hideNavProfile();}}></i></div>
                 </div>
@@ -159,6 +161,7 @@ const Code=()=>{
 
                     <div id="pBar">
                         <Link to="/profile"><i class="fa fa-user-o"></i></Link>
+
                         <Link><i class="fa fa-code"></i></Link>
                         <Link onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}><i class="fa fa-arrow-up"></i></Link>
                         <Link to="/addnew"><i class="fa fa-plus"></i></Link>
@@ -205,6 +208,8 @@ const Code=()=>{
                         <Link to="/page"><button id="Pbtn"><i class="fa fa-home"></i>&emsp;Go to home</button></Link><br/>
                         <button id="Pbtn" onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}><i class="fa fa-arrow-up"></i>&emsp;Go to Top</button><br/>
                         <Link to="/addnew"><button id="Pbtn"><i class="fa fa-plus">&emsp;</i>Add new code</button><br/></Link>
+                        <Link to="/AskCode"><img style={{width:"4.5rem",height:"4.5rem",cursor:"pointer"}} src="https://img.icons8.com/?size=100&id=102660&format=png&color=000000"/></Link>
+
                     </div>
                 </div>
             </div>

@@ -1,9 +1,7 @@
 import react,{useState} from "react";
 import { Link,useNavigate } from "react-router-dom";
 import "./login.css"
-import {useDispatch} from 'react-redux'
 import axios from "axios"
-import { authActions } from "../../redux/store";
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 

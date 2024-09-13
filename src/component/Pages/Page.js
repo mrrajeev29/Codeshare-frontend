@@ -1,8 +1,6 @@
 import react ,{useEffect,useState} from "react";
 import { Link ,useNavigate} from "react-router-dom";
 import "./page.css"
-import {useSelector,useDispatch} from 'react-redux'
-import { authActions } from "../../redux/store";
 import axios from 'axios';
 import toast,{Toaster} from "react-hot-toast"
 
@@ -147,6 +145,7 @@ const Page=()=>{
 
                 <div id="i4">
                     <div><i class="fa fa-home"></i></div>
+                    <div><Link to="/AskCode"><i class="fa fa-weixin"></i></Link></div>
                     <div><i id="searchIcon" onClick={()=>{hideNavSearch() }} class="fa fa-search"></i></div>
                     <div><i class="fa fa-user-circle-o" onClick={()=>{hideNavProfile();}}></i></div>
                 </div>
@@ -164,7 +163,6 @@ const Page=()=>{
                         <Link to="/"><i class="fa fa-sign-out" onClick={handleLogout}></i></Link>
                     </div>
                 </div>
-
 
                 <div id="Pchild1">
                     {loading?(
@@ -210,6 +208,7 @@ const Page=()=>{
                         <Link to="/yourcode"><button id="Pbtn"><i class="fa fa-code"></i>&emsp;Your Code</button></Link>
                         <button id="Pbtn" onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}><i class="fa fa-arrow-up"></i>&emsp;Go to Top</button>
                         <Link to="/addnew"><button id="Pbtn"><i class="fa fa-plus">&emsp;</i>Add new code</button></Link>
+                        <Link to="/AskCode"><img style={{width:"4.5rem",height:"4.5rem",cursor:"pointer"}} src="https://img.icons8.com/?size=100&id=102660&format=png&color=000000"/></Link>
                     </div>
                 </div>
             </div>
