@@ -1,8 +1,9 @@
-import react,{useEffect} from "react";
+import react,{useEffect, useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./profile.css";
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 window.onresize=function()
 {
     document.getElementById("i4").style.width=window.innerWidth+"px";
@@ -25,6 +26,7 @@ window.onresize=function()
 }
 
 const Profile=()=>{
+    const [pass,setPass]=useState({password:''});
     var username=localStorage.getItem('username');
     var email=localStorage.getItem('email');
     const navigate=useNavigate();
@@ -41,6 +43,27 @@ const handleLogout=()=>{
     useEffect(() => {
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
       }, []);
+
+
+      const handleChange = ({ currentTarget: input }) => {
+        setPass({ ...pass, [input.name]: input.value });
+      };
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          const url = `https://project-backend-t955.onrender.com/api/v1/user/change-password/${email}`;
+          const { data: res } = await axios.put(url, pass);
+    
+          console.log(res.message);
+          alert('Password updated Successful.');
+          navigate("/profile")
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
+
     return(
         
         <>
@@ -93,21 +116,16 @@ const handleLogout=()=>{
                             <h2>Your Name : {username}</h2>
                             <h2>Your Gmail : {email}</h2>
                         </div>
-                        <form onSubmit={()=>{alert("Password Changed.")}}>
+                        <form onSubmit={handleSubmit}>
                         <div id="CP">
                             <h1 >Change Password ?</h1>
                             <div id="signup">
                                 <i class="fa fa-lock"></i>
-                                <input type="password" id="pass1" placeholder="Enter New password" required/>
+                                <input type="password" id="pass1" placeholder="Enter New password" name="password" value={pass.password} onChange={handleChange} required/>
                                 <i class="fa fa-eye-slash" onClick={hidePass1} id="eyebtn1" style={{display:"none"}}></i>
                                 <i class="fa fa-eye" id="close-eyebtn1" onClick={showPass1}  ></i>
                             </div>
-                            <div id="signup">
-                                <i class="fa fa-lock"></i>
-                                <input type="password" id="pass2" placeholder="confirm password" required/>
-                                <i class="fa fa-eye-slash" id="eyebtn2" onClick={hidePass2} style={{display:"none"}}></i>
-                                <i class="fa fa-eye" id="close-eyebtn2" onClick={showPass2}   ></i>
-                            </div>
+                            
                             <div id="btnDiv" ><br/>
                             <button id="Ubtn" type="submit">Update Password</button>
 
