@@ -9,7 +9,7 @@ window.onresize=function()
     document.getElementById("i4").style.width=window.innerWidth+"px";
    // document.getElementById("Pchild2").style.height=window.innerHeight+"px";
 
-    if(window.innerWidth>900)
+    if(window.innerWidth>900)  
     {
         document.getElementById("i4").style.display="none";
         document.getElementById("i5").style.display="none";
