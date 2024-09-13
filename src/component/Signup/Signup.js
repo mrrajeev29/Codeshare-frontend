@@ -1,6 +1,6 @@
 import react,{useState,useEffect} from "react";
 import { Link,useNavigate } from "react-router-dom";
-import {useSelector} from 'react-redux';
+//import {useSelector} from 'react-redux';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -9,7 +9,7 @@ import "./signup.css"
 
 const Signup=()=>{
     const navigate=useNavigate();
-    const isLogin=useSelector(state=>state.isLogin);
+    //const isLogin=useSelector(state=>state.isLogin);
 
     const [inputs,setInputs] = useState({
         email:"",
@@ -78,7 +78,6 @@ const Signup=()=>{
     return(
         <> 
 
-        { !isLogin && (
         <div id="parents"> 
         <ToastContainer/>
             <div id="child">
@@ -126,7 +125,6 @@ const Signup=()=>{
                 </div>
             </div>
         </div>
-        )};
         </>
     )
 }

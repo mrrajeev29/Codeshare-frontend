@@ -56,18 +56,18 @@ const ReadMore = ({ children }) => {
 const Page=()=>{
     const [loading, setLoading] = useState(false);
     const [search,setSearch]=useState('');
-    console.log(search)
+   // console.log(search)
 
 
-    let isLogin=useSelector(state=>state.isLogin);
-    isLogin=isLogin || localStorage.getItem("userId");
-    const dispatch=useDispatch();
+  //  let isLogin=useSelector(state=>state.isLogin);
+  //  isLogin=isLogin || localStorage.getItem("userId");
+  //  const dispatch=useDispatch();
     const navigate=useNavigate();
     //console.log(isLogin);
 
     const handleLogout=()=>{
         try{
-            dispatch(authActions.logout());
+           // dispatch(authActions.logout());
            // alert('Logout Successfully');
            localStorage.removeItem("userId");
         localStorage.removeItem('username');
@@ -121,7 +121,7 @@ const Page=()=>{
       
     return(
         <>
-        {isLogin &&(
+        
         <div id="Pparents">
             
             <div id="i1">
@@ -220,7 +220,7 @@ const Page=()=>{
 
 
         </div>
-        )}
+        
         </>
     )
 }

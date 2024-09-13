@@ -12,8 +12,8 @@ import Addnew from './component/Addnew/Addnew';
 import Showcode from './component/ShowCode/Showcode';
 import Updatecode from './component/UpdateCode/Updatecode';
 import {createBrowserRouter,Navigate,RouterProvider,} from "react-router-dom";
-import {Provider} from 'react-redux'
-import { store } from './redux/store';
+//import {Provider} from 'react-redux'
+//import { store } from './redux/store';
 import {Toaster} from "react-hot-toast"
 
 const token=localStorage.getItem('userId');
@@ -55,9 +55,7 @@ const router= createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
   <RouterProvider router={router}/>
-  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
