@@ -2,7 +2,8 @@ import react ,{useEffect,useState} from "react";
 import { Link,useNavigate } from "react-router-dom";
 import "./Addnew.css"
 import axios from 'axios';
-
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 window.onresize=function()
 {
@@ -58,7 +59,8 @@ const Addnew=()=>{
                 user:id,
             })
             if(data?.success){
-                alert('Question Uploaded.');
+                alert('Question Uploaded Successfully.');
+               // alert('Uploaded')
                 navigate('/yourcode');
             }
         }catch(error){
@@ -103,6 +105,16 @@ const Addnew=()=>{
         );
       };
 
+      const handleLogout=()=>{
+        try{
+           localStorage.removeItem("userId");
+        localStorage.removeItem('username');
+        localStorage.removeItem("email")
+            navigate('/')
+        }catch(error){
+            console.log(error)
+        }
+    }
 
       
     return(
@@ -116,7 +128,7 @@ const Addnew=()=>{
                 
                 <div id="i3">
                     <h4>Welcome, {username}&emsp;&emsp;</h4>
-                    <Link to="/" id="LO"><h4>log out&emsp;</h4></Link>
+                    <Link id="LO"><h4 onClick={handleLogout}>log out&emsp;</h4></Link>
                 </div>
                 <div  id="mobNav">
                     <i id="mNav1" onClick={showIcon} class="fa fa-navicon"></i>
@@ -128,6 +140,7 @@ const Addnew=()=>{
 
 
             <div id="parent">
+            <ToastContainer/>
 
                 <div id="i4">
                     <Link to="/page"><div><i class="fa fa-home"></i></div></Link>
@@ -145,7 +158,7 @@ const Addnew=()=>{
                         <Link to="/yourcode"><i class="fa fa-code"></i></Link>
                         <Link onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}><i class="fa fa-arrow-up"></i></Link>
                         <Link to="/addnew"><i class="fa fa-plus"></i></Link>
-                        <Link to="/"><i class="fa fa-sign-out"></i></Link>
+                        <Link ><i onClick={handleLogout} class="fa fa-sign-out"></i></Link>
                     </div>
                 </div>
 

@@ -52,7 +52,7 @@
 #copy{
     display: flex;
     justify-content:space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 }
 #copy button{
     height: 1.5rem;

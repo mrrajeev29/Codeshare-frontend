@@ -27,7 +27,10 @@ window.onresize=function()
 
         document.getElementById("Pchild1").style.marginTop="5rem";
     }
-
+    if(window.innerHeight<=500)
+    {
+        document.getElementById("i5").style.display="flex";
+    }
 }
 
 const ReadMore = ({ children }) => {
@@ -66,6 +69,9 @@ const Page=()=>{
         try{
             dispatch(authActions.logout());
            // alert('Logout Successfully');
+           localStorage.removeItem("userId");
+        localStorage.removeItem('username');
+        localStorage.removeItem("email")
             navigate('/')
         }catch(error){
             console.log(error)
@@ -96,6 +102,8 @@ const Page=()=>{
         setLoading(false);
     }
 
+    
+
     useEffect(()=>{
         getAllCodes();
     },[]);
@@ -119,7 +127,7 @@ const Page=()=>{
             <div id="i1">
                 <div id="i2">
                     <h2>Code Share</h2>
-                </div>
+                </div> 
                 
                 <div id="i3">
                     
@@ -163,7 +171,7 @@ const Page=()=>{
                         <h1>Loading....</h1>
                     ) :(codes && codes.filter((code)=>{
                         return search.toLowerCase()===''? code :code?.question.toLowerCase().includes(search.toLowerCase()) 
-                         ||  search.toLowerCase()===''? code :code.user.username.toLowerCase().includes(search.toLowerCase())
+                         ||  search.toLowerCase()===''? code :code?.user?.username.toLowerCase().includes(search.toLowerCase())
                          || search.toLowerCase()===''? code :code?.language.toLowerCase().includes(search.toLowerCase())
 
                     }).map((code)=>(
@@ -174,9 +182,15 @@ const Page=()=>{
                             <button onClick={()=>(displayCode(code?._id))}><i class="fa fa-code"></i>&emsp;code</button><br/>
                           {/*  <Link to="/showcode"><button><i class="fa fa-commenting-o"></i>&emsp;Add Comment.</button><br/></Link>*/}
                         </div>
-                        <div >
-                        <p >Posted by : {code?.user?.username}&emsp;&emsp; language : {code?.language}</p>
-                        </div>
+                        <div>
+                            {code?.user ? (
+                                <p>Posted by: {code.user.username} &emsp;&emsp; language: {code?.language}</p>
+                            ) : (
+                                <p>Posted by: Anonymous &emsp;&emsp; language: {code?.language}</p>
+                            )}
+                            
+                            </div>
+
                     </div>
                     )))}
                 </div>
@@ -217,8 +231,8 @@ function showIcon()
     document.getElementById("mNav1").style.display="none";
     document.getElementById("mNav2").style.display="flex";
     document.getElementById("i4").style.display="flex";
+    
     document.getElementById("Pchild1").style.marginTop="10rem";
-
 }
 
 

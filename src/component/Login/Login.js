@@ -14,7 +14,7 @@ const Login=()=>{
 
 
     const navigate=useNavigate();
-    const dispatch = useDispatch();
+  //  const dispatch = useDispatch();
 
     const [inputs,setInputs] = useState({
         email:"",
@@ -47,7 +47,7 @@ const Login=()=>{
                 localStorage.setItem('username',data?.user.username);
                 localStorage.setItem('email',data?.user.email);
                // alert(localStorage.getItem('email'));
-                dispatch(authActions.login());
+               // dispatch(authActions.login());
                 navigate("/page");
             }
             else

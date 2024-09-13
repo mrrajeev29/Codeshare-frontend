@@ -28,12 +28,23 @@ const Updatecode=()=>{
 
     const [code,setCode]=useState({});
     const [inputs,setInputs]=useState({})
+    
 
     var username=localStorage.getItem('username');
     const id=localStorage.getItem('userId');
     const blog_id=useParams().id;
     //alert(blog_id);
     const navigate=useNavigate();
+const handleLogout=()=>{
+    try{
+       localStorage.removeItem("userId");
+    localStorage.removeItem('username');
+    localStorage.removeItem("email")
+        navigate('/')
+    }catch(error){
+        console.log(error)
+    }
+}
 
 
     const getCodeDetail=async()=>{
@@ -135,7 +146,7 @@ const Updatecode=()=>{
                 
                 <div id="i3">
                     <h4>Welcome, {username}&emsp;&emsp;</h4>
-                    <Link to="/" id="LO"><h4>log out&emsp;</h4></Link>
+                    <Link id="LO"><h4 onClick={handleLogout}>log out&emsp;</h4></Link>
                 </div>
                 <div  id="mobNav">
                     <i id="mNav1" onClick={showIcon} class="fa fa-navicon"></i>
@@ -164,7 +175,7 @@ const Updatecode=()=>{
                         <Link to="/yourcode"><i class="fa fa-code"></i></Link>
                         <Link onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}><i class="fa fa-arrow-up"></i></Link>
                         <Link to="/addnew"><i class="fa fa-plus"></i></Link>
-                        <Link to="/"><i class="fa fa-sign-out"></i></Link>
+                        <Link ><i onClick={handleLogout} class="fa fa-sign-out"></i></Link>
                     </div>
                 </div>
 

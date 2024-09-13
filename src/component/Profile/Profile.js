@@ -1,6 +1,8 @@
 import react,{useEffect} from "react";
-import { Link } from "react-router-dom";
-import "./profile.css"
+import { Link, useNavigate } from "react-router-dom";
+import "./profile.css";
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 window.onresize=function()
 {
     document.getElementById("i4").style.width=window.innerWidth+"px";
@@ -25,6 +27,17 @@ window.onresize=function()
 const Profile=()=>{
     var username=localStorage.getItem('username');
     var email=localStorage.getItem('email');
+    const navigate=useNavigate();
+const handleLogout=()=>{
+    try{
+       localStorage.removeItem("userId");
+    localStorage.removeItem('username');
+    localStorage.removeItem("email")
+        navigate('/')
+    }catch(error){
+        console.log(error)
+    }
+}
     useEffect(() => {
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
       }, []);
@@ -40,7 +53,7 @@ const Profile=()=>{
                 
                 <div id="i3">
                     <h4>Welcome, {username}&emsp;&emsp;</h4>
-                    <Link to="/" id="LO"><h4>log out&emsp;</h4></Link>
+                    <Link  id="LO"><h4 onClick={handleLogout}>log out&emsp;</h4></Link>
                 </div>
                 <div  id="mobNav">
                     <i id="mNav1" onClick={showIcon} class="fa fa-navicon"></i>
@@ -69,7 +82,7 @@ const Profile=()=>{
                         <Link to="/yourcode"><i class="fa fa-code"></i></Link>
                         <Link><i class="fa fa-arrow-up" onClick={() => {window.scrollTo({top: 0, left: 0, behavior: 'smooth'});}}></i></Link>
                         <Link to="/addnew"><i class="fa fa-plus"></i></Link>
-                        <Link to="/"><i class="fa fa-sign-out"></i></Link>
+                        <Link ><i onClick={handleLogout} class="fa fa-sign-out"></i></Link>
                     </div>
                 </div>
 

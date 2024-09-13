@@ -11,10 +11,13 @@ import Code from './component/Code/Code';
 import Addnew from './component/Addnew/Addnew';
 import Showcode from './component/ShowCode/Showcode';
 import Updatecode from './component/UpdateCode/Updatecode';
-import {createBrowserRouter,RouterProvider,} from "react-router-dom";
+import {createBrowserRouter,Navigate,RouterProvider,} from "react-router-dom";
 import {Provider} from 'react-redux'
 import { store } from './redux/store';
 import {Toaster} from "react-hot-toast"
+
+const token=localStorage.getItem('userId');
+
 const router= createBrowserRouter([
   {
     path:"/",
@@ -26,27 +29,27 @@ const router= createBrowserRouter([
   },
   {
     path: "page",
-    element:<Page/>
+    element:token?<Page/>:<Navigate replace to="/"/>
   },
   {
     path:"profile",
-    element:<Profile/>
+    element: token?<Profile/>: <Navigate replace to="/"/>
   },
   {
     path:"yourcode",
-    element:<Code/>
+    element:token?<Code/> : <Navigate replace to="/"/>
   },
   {
     path:"addnew",
-    element:<Addnew/>
+    element:token?<Addnew/> : <Navigate replace to="/"/>
   },
   {
     path:"showcode/:id",
-    element:<Showcode/>
+    element:token?<Showcode/> : <Navigate replace to="/"/>
   },
   {
     path:"updatecode/:id",
-    element:<Updatecode/>
+    element:token?<Updatecode/> : <Navigate replace to="/"/>
   }
 ]);
 
