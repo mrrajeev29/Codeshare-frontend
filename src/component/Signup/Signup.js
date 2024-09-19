@@ -118,6 +118,8 @@ const Signup=()=>{
                         <button id="Sbtn" onClick={SignupVerify}  style={{display:"none"}} className="s7"><p style={{color:"white"}}>Sign up</p></button>
                         <p id="showEmail" style={{display:"none",color:"red"}}>Email Already Registered.</p>
                         <p>Already Registered?&emsp;&emsp;<Link to="/" id="llogin">login</Link></p>
+                        <p>Forget Password?&emsp;&emsp;<Link id="slink" to="/forget-password">forget it</Link></p>
+
                         <p id="rev" onClick={Display} style={{display:"none",color:"brown",cursor:"pointer"}}>Go back</p>
                     </div>
 

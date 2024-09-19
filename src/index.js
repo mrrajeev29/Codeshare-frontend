@@ -16,6 +16,7 @@ import {createBrowserRouter,Navigate,RouterProvider,} from "react-router-dom";
 //import {Provider} from 'react-redux'
 //import { store } from './redux/store';
 import {Toaster} from "react-hot-toast"
+import ForgetPass from './component/ForgetPass/ForgetPass';
 
 const token=localStorage.getItem('userId');
 
@@ -55,6 +56,11 @@ const router= createBrowserRouter([
   {
     path:"AskCode",
     element:token?<Genai/> : <Navigate replace to="/"/>
+  }
+  ,
+  {
+    path:"forget-password",
+    element:<ForgetPass/>
   }
 ]);
 
